@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/banner.png" alt="Home Service System — ប្រព័ន្ធសេវាកម្មតាមផ្ទះ: book trusted technicians, track them live, pay and rate" width="100%">
+</p>
+
 # Home Service System
 
 A mobile marketplace that connects people who need home services — repairs, cleaning, installation, maintenance — with trusted independent technicians and service companies, operated through a web admin dashboard.
@@ -58,17 +62,29 @@ Two mobile apps and an admin dashboard on a shared backend:
 
 ## 5. How a job works
 
-```
-Customer books ─► Company owner assigns ─┐
-              └─► Technician (direct) ◄──┘
-                       │ 15 min to respond
-       ┌───────────────┼─────────────────┬──────────────┐
-    Accept      Adjust price      Propose new time     Reject
-       │        (customer OK?)    (customer OK?)          │
-       ▼               ▼                ▼                 ▼
-   Confirmed ◄─────────┴────────────────┘      Customer picks another technician
-       │
-   On the way (live map) ─► In progress ─► Completed ─► Paid (cash / ABA PayWay) ─► Rated
+```mermaid
+flowchart TD
+    Book["Customer books a job"] -->|"picks a company"| Owner["Company owner assigns an employee"]
+    Book -->|"picks a technician"| Tech["Technician receives the offer"]
+    Owner --> Tech
+    Tech -->|"15 min to respond"| Respond{"Technician response"}
+
+    Respond -->|"Accept"| Confirmed["Confirmed"]
+    Respond -->|"Adjust price"| Price{"Customer accepts price?"}
+    Respond -->|"Propose new time"| Time{"Customer accepts time?"}
+    Respond -->|"Reject / no response"| Reassign["Customer picks another technician"]
+
+    Price -->|"Yes"| Confirmed
+    Price -->|"No"| Reassign
+    Time -->|"Yes"| Confirmed
+    Time -->|"No"| Reassign
+    Reassign --> Tech
+
+    Confirmed --> OnTheWay["On the way - live map"]
+    OnTheWay --> InProgress["In progress"]
+    InProgress --> Completed["Completed"]
+    Completed --> Paid["Paid - cash or ABA PayWay"]
+    Paid --> Rated["Rated"]
 ```
 
 ## 6. Architecture & technology
@@ -85,11 +101,42 @@ Customer books ─► Company owner assigns ─┐
 | Admin dashboard | Vue 3 + TypeScript, shadcn-vue, Tailwind CSS, Pinia |
 | File storage | S3-compatible object storage |
 
-```
-Customer app ─┐
-Technician app ├─► Laravel API + Reverb ─► PostgreSQL/PostGIS · Redis · S3
-Admin (web) ──┘          │
-                         └─► FCM · Google Maps · ABA PayWay · Facebook/Apple login
+```mermaid
+flowchart LR
+    subgraph Clients
+        CA["Customer app<br/>Flutter"]
+        TA["Technician app<br/>Flutter"]
+        AD["Admin dashboard<br/>Vue 3"]
+    end
+
+    subgraph Backend
+        API["Laravel API<br/>REST /api/v1"]
+        WS["Laravel Reverb<br/>WebSockets"]
+        Q["Queue workers<br/>& scheduler"]
+    end
+
+    subgraph Data
+        DB[("PostgreSQL<br/>+ PostGIS")]
+        R[("Redis")]
+        S3[("S3 storage")]
+    end
+
+    subgraph External["External services"]
+        FCM["Firebase Cloud Messaging"]
+        GM["Google Maps"]
+        PW["ABA PayWay"]
+        SL["Facebook / Apple login"]
+    end
+
+    CA & TA & AD -->|"HTTPS"| API
+    CA & TA & AD <-->|"WSS"| WS
+    API --> DB & R & S3
+    Q --> DB & R
+    WS --> R
+    Q -->|"push"| FCM
+    API --> PW & SL
+    PW -->|"webhook"| API
+    CA & TA --> GM
 ```
 
 ## 7. Scope

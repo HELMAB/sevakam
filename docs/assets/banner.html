@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home Service Banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+Khmer:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-1: #0b3b4f;
+    --bg-2: #0f5a6e;
+    --ink: #ffffff;
+    --ink-soft: rgba(255,255,255,.78);
+    --ink-faint: rgba(255,255,255,.14);
+    --accent: #ffb547;
+    --accent-2: #3dd6b5;
+    --card: #ffffff;
+    --card-ink: #0b2b3a;
+    --card-soft: #5c7480;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 400px; overflow: hidden; background: var(--bg-1); }
+  body {
+    font-family: 'Google Sans', 'Noto Sans Khmer', system-ui, sans-serif;
+    color: var(--ink);
+  }
+  .km { font-family: 'Noto Sans Khmer', 'Google Sans', sans-serif; }
+
+  .banner {
+    position: relative; width: 1280px; height: 400px; overflow: hidden;
+    background:
+      radial-gradient(circle at 88% 20%, rgba(61,214,181,.28), transparent 42%),
+      radial-gradient(circle at 70% 110%, rgba(255,181,71,.22), transparent 45%),
+      linear-gradient(120deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    display: grid; grid-template-columns: 1fr 440px; align-items: center;
+    padding: 0 64px;
+  }
+  /* subtle dotted map texture */
+  .banner::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(var(--ink-faint) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 55%, #000 100%);
+    pointer-events: none;
+  }
+
+  .left { position: relative; z-index: 1; }
+  .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .logo {
+    width: 52px; height: 52px; border-radius: 14px; background: var(--accent);
+    display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  }
+  .eyebrow { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; }
+  .eyebrow .km { letter-spacing: 0; text-transform: none; }
+
+  h1 { font-size: 58px; line-height: 1.02; font-weight: 700; letter-spacing: -.02em; }
+  h1 .hl { color: var(--accent); }
+  .km-title { font-size: 30px; font-weight: 700; margin-top: 10px; line-height: 1.5; }
+  .tagline { margin-top: 12px; font-size: 18px; color: var(--ink-soft); line-height: 1.45; max-width: 640px; }
+  .tagline .km { display: block; font-size: 16px; margin-top: 2px; line-height: 1.7; }
+
+  .chips { display: flex; gap: 10px; margin-top: 20px; }
+  .chip {
+    display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 10px;
+    border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+    font-size: 14px; font-weight: 500;
+  }
+  .chip .km { font-size: 13px; color: var(--ink-soft); font-weight: 400; }
+  .chip svg { flex: none; }
+
+  /* right: phone + floating cards */
+  .right { position: relative; z-index: 1; height: 400px; }
+  .phone {
+    position: absolute; left: 110px; top: 34px; width: 220px; height: 420px;
+    border-radius: 34px; background: #0a2230; padding: 10px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.08);
+    transform: rotate(-6deg);
+  }
+  .screen { width: 100%; height: 100%; border-radius: 26px; overflow: hidden; background: #eef4f6; position: relative; }
+  .map {
+    height: 190px; position: relative;
+    background:
+      linear-gradient(90deg, transparent 47%, #fff 47%, #fff 53%, transparent 53%),
+      linear-gradient(0deg, transparent 58%, #fff 58%, #fff 64%, transparent 64%),
+      linear-gradient(35deg, transparent 30%, #fff 30%, #fff 34%, transparent 34%),
+      #d7ebe6;
+  }
+  .route { position: absolute; inset: 0; }
+  .sheet { position: absolute; left: 0; right: 0; top: 170px; bottom: 0; background: #fff; border-radius: 20px 20px 0 0; padding: 16px 14px; color: var(--card-ink); }
+  .status { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #0b7a62; background: #dff7f0; padding: 4px 9px; border-radius: 999px; }
+  .status i { width: 6px; height: 6px; border-radius: 50%; background: #0b9c7c; display: block; }
+  .job { font-size: 15px; font-weight: 700; margin-top: 10px; }
+  .job-km { font-size: 11px; color: var(--card-soft); margin-top: 1px; }
+  .tech { display: flex; align-items: center; gap: 9px; margin-top: 12px; }
+  .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #ffb547, #ff8a3d); }
+  .tech b { font-size: 12px; display: block; }
+  .tech span { font-size: 11px; color: var(--card-soft); }
+  .eta { margin-top: 12px; height: 34px; border-radius: 12px; background: var(--bg-2); color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
+
+  .float {
+    position: absolute; background: var(--card); color: var(--card-ink); border-radius: 16px;
+    box-shadow: 0 16px 36px rgba(0,0,0,.25); padding: 12px 14px; display: flex; align-items: center; gap: 10px;
+  }
+  .float .ic { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; flex: none; }
+  .float b { display: block; font-size: 13px; }
+  .float span { display: block; font-size: 11px; color: var(--card-soft); }
+  .f1 { left: 0; top: 70px; }
+  .f2 { right: 0; top: 150px; }
+  .f3 { left: -70px; bottom: 64px; }
+  .stars { color: var(--accent); letter-spacing: 1px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="banner">
+  <div class="left">
+    <div class="brand">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b3b4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="m14.5 12.5-4 4-1.5-1.5"/>
+        </svg>
+      </div>
+      <div class="eyebrow">On-demand home services · <span class="km">សេវាកម្មតាមតម្រូវការ</span></div>
+    </div>
+
+    <h1>Home <span class="hl">Service</span> System</h1>
+    <div class="km km-title">ប្រព័ន្ធសេវាកម្មតាមផ្ទះ</div>
+
+    <p class="tagline">
+      Book trusted technicians — track them live, pay and rate.
+      <span class="km">ភ្ជាប់អតិថិជនជាមួយជាងជំនាញ និងក្រុមហ៊ុនសេវាកម្មដែលទុកចិត្តបាន</span>
+    </p>
+
+    <div class="chips">
+      <div class="chip">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb547" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+        Customer app <span class="km">កម្មវិធីអតិថិជន</span>
+      </div>
+      <div class="chip">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3dd6b5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg>
+        Technician app <span class="km">កម្មវិធីជាង</span>
+      </div>
+      <div class="chip">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M7 14v-3M12 14V8M17 14v-5"/></svg>
+        Admin <span class="km">ផ្ទាំងគ្រប់គ្រង</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="phone">
+      <div class="screen">
+        <div class="map">
+          <svg class="route" viewBox="0 0 200 190" preserveAspectRatio="none">
+            <path d="M30 160 C 60 120, 70 110, 100 112 S 150 70, 168 40" fill="none" stroke="#0f5a6e" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 8"/>
+            <circle cx="30" cy="160" r="9" fill="#ffb547" stroke="#fff" stroke-width="3"/>
+            <path d="M168 22c-7 0-12 5-12 11 0 8 12 19 12 19s12-11 12-19c0-6-5-11-12-11z" fill="#0f5a6e"/>
+            <circle cx="168" cy="33" r="4" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="sheet">
+          <div class="status"><i></i>On the way</div>
+          <div class="job">AC cleaning × 2</div>
+          <div class="job-km km">សម្អាតម៉ាស៊ីនត្រជាក់</div>
+          <div class="tech">
+            <div class="avatar"></div>
+            <div><b>Technician</b><span>★ 4.9 · 120 jobs</span></div>
+          </div>
+          <div class="eta">Arriving in 12 min</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="float f1">
+      <div class="ic" style="background:#fff3df">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e08a00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </div>
+      <div><b>New job request</b><span class="km">ការងារថ្មី · 15:00</span></div>
+    </div>
+
+    <div class="float f2">
+      <div class="ic" style="background:#dff7f0">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b9c7c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <div><b>Paid · ABA PayWay</b><span>$42.00 · ៛172,200</span></div>
+    </div>
+
+    <div class="float f3">
+      <div class="ic" style="background:#fff3df">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffb547"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+      </div>
+      <div><b>Rated 5 stars</b><span class="stars">★★★★★</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
