@@ -229,6 +229,10 @@
           <i data-lucide="arrow-right" class="h-[18px] w-[18px] transition group-hover:translate-x-1" stroke-width="2.4"></i>
         </a>
         <a href="#how" class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white ring-1 ring-white/30 transition hover:bg-white/10" data-i18n="hero.cta2">See how it works</a>
+        <a href="#pitch" class="group inline-flex items-center gap-2 rounded-full px-5 py-3.5 font-bold text-white/85 transition hover:text-white">
+          <i data-lucide="circle-play" class="h-5 w-5 text-mint-400 transition group-hover:scale-110" stroke-width="2.2"></i>
+          <span data-i18n="hero.cta3">Watch the pitch</span>
+        </a>
       </div>
 
       <!-- facts -->
@@ -313,6 +317,24 @@
   <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white"></div>
   <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white"></div>
 </div>
+
+<!-- ============ PITCH VIDEO ============ -->
+<section id="pitch" class="py-24 sm:py-28">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:gap-20 lg:px-8">
+    <div class="max-w-2xl">
+      <p class="reveal tracking-label text-sm font-bold uppercase tracking-[.18em] text-amber-600" data-i18n="pitch.eyebrow">Pitch video</p>
+      <h2 class="reveal km-tight mt-3 text-3xl font-bold tracking-tight sm:text-4xl" style="--d:80ms" data-i18n="pitch.title">Sevakam in under three minutes</h2>
+      <p class="reveal km-tight mt-4 text-lg leading-relaxed text-ink-800/70" style="--d:160ms" data-i18n="pitch.sub">A short walkthrough of the problem, the three apps and the plan to launch, narrated in Khmer.</p>
+    </div>
+    <div class="reveal mx-auto w-full max-w-[300px] sm:max-w-[340px]" style="--d:200ms">
+      <div class="rounded-[2.4rem] bg-[#0a2230] p-3 shadow-2xl shadow-ink-900/30 ring-2 ring-ink-800/10">
+        <video class="block aspect-[9/16] w-full rounded-[1.9rem] bg-black object-cover" controls playsinline preload="none" poster="assets/video/sevakam-pitch-poster.jpg" aria-label="Sevakam pitch video">
+          <source src="assets/video/sevakam-pitch.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ PROBLEM ============ -->
 <section id="problem" class="py-24 sm:py-28">
@@ -562,6 +584,9 @@ const I18N = {
     'hero.title1': 'Home services,', 'hero.title2': 'booked in minutes.',
     'hero.sub': 'A marketplace connecting households with trusted technicians and service companies across Cambodia — transparent prices, live tracking, cash or ABA PayWay.',
     'hero.cta1': 'Invest with us', 'hero.cta2': 'See how it works',
+    'hero.cta3': 'Watch the pitch',
+    'pitch.eyebrow': 'Pitch video', 'pitch.title': 'Sevakam in under three minutes',
+    'pitch.sub': 'A short walkthrough of the problem, the three apps and the plan to launch, narrated in Khmer.',
     'fact.apps': 'apps in one platform', 'fact.min': 'min', 'fact.response': 'response window', 'fact.pay': 'payment methods', 'fact.tasks': 'build tasks planned',
     'mock.status': 'On the way', 'mock.job': 'AC cleaning × 2', 'mock.when': 'Today · 09:00', 'mock.tech': 'Your technician', 'mock.jobs': 'jobs', 'mock.eta': 'Arriving in 12 min',
     'mock.new': 'New job request', 'mock.respond': 'Respond within 15 min', 'mock.paid': 'Paid · ABA PayWay', 'mock.rated': 'Rated 5 stars',
@@ -612,6 +637,9 @@ const I18N = {
     'hero.title1': 'សេវាកម្មតាមផ្ទះ', 'hero.title2': 'កក់បានក្នុងប៉ុន្មាននាទី។',
     'hero.sub': 'ទីផ្សារឌីជីថលដែលភ្ជាប់គ្រួសារជាមួយជាងជំនាញ និងក្រុមហ៊ុនសេវាកម្មដែលទុកចិត្តបាន នៅទូទាំងកម្ពុជា — តម្លៃច្បាស់លាស់ តាមដានផ្ទាល់ ទូទាត់ជាសាច់ប្រាក់ ឬ ABA PayWay។',
     'hero.cta1': 'វិនិយោគជាមួយយើង', 'hero.cta2': 'មើលរបៀបដំណើរការ',
+    'hero.cta3': 'មើលវីដេអូបទបង្ហាញ',
+    'pitch.eyebrow': 'វីដេអូបទបង្ហាញ', 'pitch.title': 'Sevakam ក្នុងរយៈពេលតិចជាងបីនាទី',
+    'pitch.sub': 'ការណែនាំខ្លីអំពីបញ្ហា កម្មវិធីទាំងបី និងផែនការដាក់ឱ្យដំណើរការ ជាភាសាខ្មែរ។',
     'fact.apps': 'កម្មវិធីក្នុងវេទិកាតែមួយ', 'fact.min': 'នាទី', 'fact.response': 'រយៈពេលឆ្លើយតប', 'fact.pay': 'វិធីទូទាត់', 'fact.tasks': 'ការងារអភិវឌ្ឍដែលបានគ្រោង',
     'mock.status': 'កំពុងធ្វើដំណើរ', 'mock.job': 'សម្អាតម៉ាស៊ីនត្រជាក់ × ២', 'mock.when': 'ថ្ងៃនេះ · ០៩:០០', 'mock.tech': 'ជាងរបស់អ្នក', 'mock.jobs': 'ការងារ', 'mock.eta': 'មកដល់ក្នុង ១២ នាទី',
     'mock.new': 'សំណើការងារថ្មី', 'mock.respond': 'ឆ្លើយតបក្នុង ១៥ នាទី', 'mock.paid': 'បានទូទាត់ · ABA PayWay', 'mock.rated': 'វាយតម្លៃ ៥ ផ្កាយ',
