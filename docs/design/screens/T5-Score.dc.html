@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Score and rewards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-direction: column; overflow: hidden">
+  <div style="flex-grow: 1; overflow: hidden; padding: 20px 20px 0; display: flex; flex-direction: column; gap: 16px">
+    <h1 style="margin: 0; font-size: 22px; font-weight: 800">Score</h1>
+
+    <section style="background: #F2B33D; border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden">
+      <div style="position: absolute; right: -40px; bottom: -60px; width: 180px; height: 180px; border-radius: 50%; border: 28px solid rgba(255,255,255,.25)"></div>
+      <div style="font-size: 13px; font-weight: 700; color: #4A3000">Points balance</div>
+      <div style="font-size: 40px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums">860</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; position: relative">
+        <span style="height: 30px; padding: 0 10px; border-radius: 999px; background: rgba(20,33,31,.88); color: #FFFFFF; font-size: 12px; font-weight: 600; display: flex; align-items: center">120 pts expire 3 Jan 2027</span>
+        <span style="height: 30px; padding: 0 10px; border-radius: 999px; background: rgba(255,255,255,.6); color: #14211F; font-size: 12px; font-weight: 600; display: flex; align-items: center">+50 per paid job</span>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <h2 style="margin: 0; font-size: 17px; font-weight: 700">Rewards</h2>
+        <a href="#" style="font-size: 14px; font-weight: 600">History</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <sc-for list="{{rewards}}" as="r" hint-placeholder-count="4">
+          <div style="background: #FFFFFF; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 8px">
+            <div style="height: 76px; border-radius: 12px; background: {{r.tint}}; display: flex; align-items: center; justify-content: center">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="{{r.ink}}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{r.icon}}"/></svg>
+            </div>
+            <div style="font-weight: 700; font-size: 14px">{{r.name}}</div>
+            <div style="display: flex; justify-content: space-between; align-items: center">
+              <span style="font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums">{{r.cost}} pts</span>
+              <button disabled="{{r.locked}}" style="height: 34px; padding: 0 12px; border-radius: 10px; border: 0; background: {{r.btnBg}}; color: {{r.btnFg}}; font: 700 13px 'Plus Jakarta Sans', sans-serif">{{r.btn}}</button>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 14px; display: flex; gap: 12px; align-items: center">
+      <div style="width: 40px; height: 40px; border-radius: 12px; background: #E3F0EC; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E5E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></div>
+      <div style="flex-grow: 1"><div style="font-weight: 700; font-size: 14px">Tool bag · approved</div><div style="font-size: 12px; color: #5E6B68">Collect at the Sevakam office</div></div>
+    </section>
+  </div>
+
+  <nav aria-label="Main" style="height: 76px; background: #FFFFFF; border-top: 1px solid #E4E0D6; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-bottom: 8px">
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #5E6B68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #5E6B68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg>Jobs</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 700; color: #0E5E56"><svg width="24" height="24" viewBox="0 0 24 24" fill="#E3F0EC" stroke="#0E5E56" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Score</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #5E6B68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Account</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const bal = 860;
+    const rewards = [
+      { name: 'Phone top-up $5', cost: 400, tint: '#E3ECF8', ink: '#1D4E89', icon: 'M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM11 18h2' },
+      { name: 'Work T-shirt', cost: 500, tint: '#E3F0EC', ink: '#0E5E56', icon: 'M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z' },
+      { name: 'Digital multimeter', cost: 900, tint: '#FBE6D6', ink: '#8F430A', icon: 'M6 2h12v20H6zM9 5h6v5H9zM12 14v3M10 19h4' },
+      { name: 'Cordless drill', cost: 2500, tint: '#ECE8F8', ink: '#4B3C8F', icon: 'M3 7h11v6H3zM14 9h5M10 13l-1 8h4l1-8' }
+    ].map((r) => {
+      const locked = r.cost > bal;
+      return { ...r, cost: r.cost.toLocaleString('en-US'), locked, btn: locked ? 'Need ' + (r.cost - bal) : 'Redeem', btnBg: locked ? '#EEEDE8' : '#0E5E56', btnFg: locked ? '#5E6B68' : '#FFFFFF' };
+    });
+    return { rewards };
+  }
+}
+</script>
+</body>
+</html>

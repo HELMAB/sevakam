@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Assign employee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-direction: column; overflow: hidden">
+  <header style="padding: 16px 20px 8px; display: flex; align-items: center; gap: 12px">
+    <a href="#" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14211F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <div>
+      <div style="font-size: 13px; color: #5E6B68">CoolTech Co. · company job</div>
+      <h1 style="margin: 0; font-size: 20px; font-weight: 800">Assign a technician</h1>
+    </div>
+  </header>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 10px 20px; display: flex; flex-direction: column; gap: 14px">
+    <section style="background: #FFFFFF; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; justify-content: space-between; align-items: center">
+        <span style="font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: #FCEFD2; color: #7A4E00">Waiting for company</span>
+        <span style="font-weight: 800; font-variant-numeric: tabular-nums; color: #7A4E00">09:12 left</span>
+      </div>
+      <div style="height: 6px; border-radius: 9px; background: #FCEFD2"><div style="width: 61%; height: 6px; border-radius: 9px; background: #F2B33D"></div></div>
+      <div>
+        <div style="font-size: 17px; font-weight: 700">Air-con · Installation × 1</div>
+        <div style="font-size: 14px; color: #5E6B68">Fri 21 Nov, 14:00 · Sen Sok · 6.3 km · $36.00 (−20%)</div>
+      </div>
+    </section>
+
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 700">Your team</h2>
+      <span style="font-size: 13px; color: #5E6B68">4 of 6 online</span>
+    </div>
+
+    <sc-for list="{{team}}" as="m" hint-placeholder-count="5">
+      <button aria-pressed="{{m.on}}" disabled="{{m.off}}" style="text-align: left; background: {{m.bg}}; border-radius: 16px; padding: 12px 14px; display: flex; gap: 12px; align-items: center; border: 2px solid {{m.border}}; font-family: 'Plus Jakarta Sans', sans-serif; color: #14211F; cursor: pointer">
+        <div style="position: relative">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: {{m.avatar}}; color: #FFFFFF; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center">{{m.init}}</div>
+          <span style="position: absolute; right: -1px; bottom: -1px; width: 14px; height: 14px; border-radius: 50%; background: {{m.dot}}; border: 2.5px solid #FFFFFF"></span>
+        </div>
+        <div style="flex-grow: 1; min-width: 0">
+          <div style="font-weight: 700; font-size: 15px">{{m.name}}</div>
+          <div style="font-size: 12px; color: #5E6B68">{{m.meta}}</div>
+          <sc-if value="{{m.warn}}" hint-placeholder-val="{{false}}">
+            <div style="margin-top: 4px; font-size: 12px; font-weight: 600; color: #8F430A; display: flex; align-items: center; gap: 4px">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8F430A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20zM12 10v4M12 17h.01"/></svg>{{m.warn}}
+            </div>
+          </sc-if>
+        </div>
+        <span style="width: 22px; height: 22px; border-radius: 50%; border: 2px solid {{m.radio}}; display: flex; align-items: center; justify-content: center"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{m.radioDot}}"></span></span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div style="background: #FFFFFF; border-top: 1px solid #E4E0D6; padding: 14px 20px 22px; display: flex; gap: 10px">
+    <button style="flex: 1; height: 52px; border-radius: 14px; border: 0; background: #F8E3E1; color: #A12B2B; font: 700 15px 'Plus Jakarta Sans', sans-serif">Reject</button>
+    <button style="flex: 2; height: 52px; border-radius: 14px; border: 0; background: #0E5E56; color: #FFFFFF; font: 700 15px 'Plus Jakarta Sans', sans-serif">Assign Sokha</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [
+      { init: 'SC', name: 'Sokha Chea', meta: 'Online · 4.9 · 97% accept', online: true, avatar: '#0E5E56', on: true },
+      { init: 'PR', name: 'Piseth Ros', meta: 'Online · 4.7 · 91% accept', online: true, avatar: '#1D4E89', warn: 'Has a job at 13:00 (within 2 h)' },
+      { init: 'ME', name: 'You (owner)', meta: 'Online · 4.8 · owners can take jobs', online: true, avatar: '#7A4E00' },
+      { init: 'LN', name: 'Leakhena Nov', meta: 'Online · 4.6 · 95% accept', online: true, avatar: '#4B3C8F' },
+      { init: 'KT', name: 'Kosal Thy', meta: 'Offline since 08:40', online: false, avatar: '#8A9391' }
+    ];
+    const team = raw.map((m) => ({
+      ...m, warn: m.warn || '', on: !!m.on, off: !m.online,
+      bg: m.online ? '#FFFFFF' : '#EEEDE8',
+      border: m.on ? '#0E5E56' : (m.online ? '#FFFFFF' : '#EEEDE8'),
+      dot: m.online ? '#1F8A4C' : '#B5B0A5',
+      radio: m.on ? '#0E5E56' : '#C9C4B8', radioDot: m.on ? '#0E5E56' : 'transparent'
+    }));
+    return { team };
+  }
+}
+</script>
+</body>
+</html>

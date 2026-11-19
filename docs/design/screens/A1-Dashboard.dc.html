@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-wrap: wrap; align-items: stretch">
+  <aside style="flex: 1 1 240px; max-width: 100%; background: #14211F; color: #FFFFFF; padding: 22px 14px; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+      <div style="width: 36px; height: 36px; border-radius: 10px; background: #0E5E56; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2B33D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/></svg></div>
+      <div><div style="font-weight: 800; font-size: 17px">Sevakam</div><div style="font-size: 12px; color: #A9B5B2">Admin</div></div>
+    </div>
+    <nav aria-label="Admin" style="display: flex; flex-direction: column; gap: 2px">
+      <sc-for list="{{nav}}" as="n" hint-placeholder-count="12">
+        <sc-if value="{{n.head}}" hint-placeholder-val="{{false}}"><div style="font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8C9A97; padding: 14px 10px 6px">{{n.label}}</div></sc-if>
+        <sc-if value="{{n.link}}" hint-placeholder-val="{{true}}">
+          <a href="#" style="height: 40px; border-radius: 10px; padding: 0 10px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: {{n.weight}}; color: {{n.fg}}; background: {{n.bg}}">
+            <span style="flex-grow: 1">{{n.label}}</span>
+            <sc-if value="{{n.badge}}" hint-placeholder-val="{{false}}"><span style="min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; background: #F2B33D; color: #14211F; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{n.badge}}</span></sc-if>
+          </a>
+        </sc-if>
+      </sc-for>
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 24px clamp(16px, 3vw, 36px) 40px; display: flex; flex-direction: column; gap: 22px">
+    <header style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+      <div>
+        <h1 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.01em">Dashboard</h1>
+        <div style="font-size: 14px; color: #5E6B68">Thursday 19 Nov 2026 · live</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+        <div role="group" aria-label="Date range" style="display: flex; background: #FFFFFF; border: 1px solid #E4E0D6; border-radius: 12px; padding: 3px">
+          <button style="height: 36px; padding: 0 14px; border: 0; border-radius: 9px; background: #14211F; color: #FFFFFF; font: 600 13px 'Plus Jakarta Sans', sans-serif">Today</button>
+          <button style="height: 36px; padding: 0 14px; border: 0; border-radius: 9px; background: transparent; color: #14211F; font: 600 13px 'Plus Jakarta Sans', sans-serif">7 days</button>
+          <button style="height: 36px; padding: 0 14px; border: 0; border-radius: 9px; background: transparent; color: #14211F; font: 600 13px 'Plus Jakarta Sans', sans-serif">30 days</button>
+          <button style="height: 36px; padding: 0 14px; border: 0; border-radius: 9px; background: transparent; color: #14211F; font: 600 13px 'Plus Jakarta Sans', sans-serif">Custom</button>
+        </div>
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: #D8CFBD; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px">AD</div>
+      </div>
+    </header>
+
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px">
+      <sc-for list="{{kpis}}" as="k" hint-placeholder-count="6">
+        <div style="background: #FFFFFF; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+          <div style="font-size: 13px; font-weight: 600; color: #5E6B68">{{k.label}}</div>
+          <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums">{{k.value}}</div>
+          <div style="font-size: 12px; color: {{k.deltaFg}}; font-weight: 600">{{k.delta}}</div>
+        </div>
+      </sc-for>
+    </section>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px">
+      <section style="flex: 3 1 420px; min-width: 0; background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 17px; font-weight: 700">Jobs by status · today</h2><span style="font-size: 13px; color: #5E6B68">86 jobs</span></div>
+        <sc-for list="{{bars}}" as="b" hint-placeholder-count="9">
+          <div style="display: grid; grid-template-columns: 170px 1fr 40px; gap: 12px; align-items: center">
+            <span style="font-size: 13px; font-weight: 600">{{b.label}}</span>
+            <div style="height: 14px; border-radius: 4px; background: #F3F1EC"><div style="height: 14px; border-radius: 4px; width: {{b.w}}; background: {{b.c}}"></div></div>
+            <span style="font-size: 13px; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums">{{b.n}}</span>
+          </div>
+        </sc-for>
+      </section>
+
+      <section style="flex: 2 1 320px; min-width: 0; background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 17px; font-weight: 700">Needs your attention</h2></div>
+        <sc-for list="{{todo}}" as="t" hint-placeholder-count="4">
+          <a href="#" style="display: flex; gap: 12px; align-items: center; padding: 12px; border-radius: 14px; background: #F6F4EF; color: #14211F">
+            <span style="width: 36px; height: 36px; border-radius: 10px; background: {{t.bg}}; color: {{t.fg}}; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center">{{t.n}}</span>
+            <span style="flex-grow: 1"><span style="display: block; font-weight: 700; font-size: 14px">{{t.title}}</span><span style="display: block; font-size: 12px; color: #5E6B68">{{t.sub}}</span></span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </sc-for>
+      </section>
+    </div>
+
+    <section style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 17px; font-weight: 700">Latest jobs</h2><a href="#" style="font-size: 14px; font-weight: 600">All jobs</a></div>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 720px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="text-align: left; color: #5E6B68; font-size: 12px; text-transform: uppercase; letter-spacing: .05em">
+              <th style="padding: 10px 8px; font-weight: 700">Code</th><th style="padding: 10px 8px; font-weight: 700">Service</th><th style="padding: 10px 8px; font-weight: 700">Customer</th><th style="padding: 10px 8px; font-weight: 700">Provider</th><th style="padding: 10px 8px; font-weight: 700">Appointment</th><th style="padding: 10px 8px; font-weight: 700">Status</th><th style="padding: 10px 8px; font-weight: 700; text-align: right">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr data-sc-for="rows" data-as="r" style="border-top: 1px solid #F0EDE6">
+                <td style="padding: 12px 8px; font-weight: 700"><a href="#">{{r.code}}</a></td>
+                <td style="padding: 12px 8px">{{r.svc}}</td>
+                <td style="padding: 12px 8px">{{r.cust}}</td>
+                <td style="padding: 12px 8px">{{r.prov}}</td>
+                <td style="padding: 12px 8px; color: #5E6B68">{{r.when}}</td>
+                <td style="padding: 12px 8px"><span style="font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: {{r.bg}}; color: {{r.fg}}; white-space: nowrap">{{r.status}}</span></td>
+                <td style="padding: 12px 8px; text-align: right; font-weight: 700; font-variant-numeric: tabular-nums">{{r.total}}</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const L = (label, badge, active) => ({ link: true, head: false, label, badge: badge || '', weight: active ? 700 : 500, fg: active ? '#FFFFFF' : '#C9D2D0', bg: active ? '#0E5E56' : 'transparent' });
+    const H = (label) => ({ head: true, link: false, label });
+    const nav = [
+      L('Dashboard', 0, true), L('Jobs'), L('Approvals', 4), H('People'), L('Customers'), L('Technicians'), L('Companies'),
+      H('Catalog'), L('Services'), L('Reasons'), L('Promotions', 2), L('Ratings'),
+      H('Money'), L('Settlements'), L('Rewards'), L('Reward requests', 3), L('Reports'), H('System'), L('Settings'), L('Pages')
+    ];
+    const kpis = [
+      { label: 'Jobs today', value: '86', delta: '+12 vs last Thu', deltaFg: '#1F6B3A' },
+      { label: 'Completed', value: '61', delta: '71% of today', deltaFg: '#5E6B68' },
+      { label: 'Cancelled', value: '7', delta: '3 by customer · 4 system', deltaFg: '#A12B2B' },
+      { label: 'Revenue · PayWay', value: '$2,980', delta: '≈ ៛12,218,000', deltaFg: '#5E6B68' },
+      { label: 'Revenue · cash', value: '$1,240', delta: '≈ ៛5,084,000', deltaFg: '#5E6B68' },
+      { label: 'New sign-ups', value: '34 · 5', delta: 'customers · technicians', deltaFg: '#5E6B68' }
+    ];
+    const max = 30;
+    const bars = [
+      ['Waiting (company/tech)', 6, '#F2B33D'], ['Price / time proposed', 4, '#5B8BD0'], ['Needs new technician', 3, '#D96B5F'],
+      ['Confirmed', 14, '#0E5E56'], ['On the way / in progress', 9, '#7E6BC4'], ['Awaiting payment', 5, '#D9822B'],
+      ['Paid', 28, '#3C9A5F'], ['Cancelled', 7, '#A8A49A']
+    ].map(([label, n, c]) => ({ label, n, c, w: Math.round(n / max * 100) + '%' }));
+    const todo = [
+      { n: 4, title: 'Registrations to approve', sub: '3 freelancers · 1 company', bg: '#FCEFD2', fg: '#7A4E00' },
+      { n: 2, title: 'Promotions to review', sub: 'CoolTech Co., Vannak Pich', bg: '#E3ECF8', fg: '#1D4E89' },
+      { n: 3, title: 'Reward requests', sub: 'Hand over at the office', bg: '#ECE8F8', fg: '#4B3C8F' },
+      { n: 3, title: 'Jobs need a new technician', sub: 'Oldest: 42 min', bg: '#F8E3E1', fg: '#A12B2B' }
+    ];
+    const S = { conf: ['Confirmed', '#E3F0EC', '#0E5E56'], otw: ['On the way', '#ECE8F8', '#4B3C8F'], pay: ['Awaiting payment', '#FBE6D6', '#8F430A'], paid: ['Paid', '#E2F2E6', '#1F6B3A'], need: ['Needs new technician', '#F8E3E1', '#A12B2B'] };
+    const row = (code, svc, cust, prov, when, s, total) => ({ code, svc, cust, prov, when, total, status: S[s][0], bg: S[s][1], fg: S[s][2] });
+    const rows = [
+      row('SV-24117', 'Air-con', 'Dara S.', 'Sokha Chea · CoolTech', 'Today 10:00', 'pay', '$48.00'),
+      row('SV-24121', 'Plumbing', 'Chenda L.', 'Vannak Pich', 'Today 10:00', 'otw', '$25.00'),
+      row('SV-24109', 'Cleaning', 'Malis H.', 'MekongFix', 'Today 09:00', 'paid', '$32.00'),
+      row('SV-24130', 'Electrical', 'Rotha K.', '—', 'Today 15:00', 'need', '$18.00'),
+      row('SV-24133', 'Pest control', 'Sophea N.', 'Angkor Services', 'Fri 08:00', 'conf', '$40.00')
+    ];
+    return { nav, kpis, bars, todo, rows };
+  }
+}
+</script>
+</body>
+</html>

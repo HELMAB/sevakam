@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Job with price proposal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-direction: column; overflow: hidden">
+  <header style="padding: 16px 20px 8px; display: flex; align-items: center; gap: 12px">
+    <a href="#" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14211F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <div style="flex-grow: 1">
+      <div style="font-size: 13px; color: #5E6B68">Job SV-24117</div>
+      <h1 style="margin: 0; font-size: 20px; font-weight: 800">Air-con · 2 services</h1>
+    </div>
+    <span style="font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 999px; background: #E3ECF8; color: #1D4E89">Price proposed</span>
+  </header>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 10px 20px; display: flex; flex-direction: column; gap: 14px">
+    <section style="background: #FFFFFF; border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 14px; border: 2px solid #1D4E89">
+      <div style="display: flex; gap: 12px; align-items: center">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background: #0E5E56; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center">SC</div>
+        <div>
+          <div style="font-weight: 700">Sokha proposed a new price</div>
+          <div style="font-size: 13px; color: #5E6B68">Based on your photos and items</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <div style="background: #F6F4EF; border-radius: 14px; padding: 12px">
+          <div style="font-size: 12px; color: #5E6B68; font-weight: 600">Your estimate</div>
+          <div style="font-size: 20px; font-weight: 700; color: #5E6B68; text-decoration: line-through; font-variant-numeric: tabular-nums">$44.00</div>
+          <div style="font-size: 12px; color: #5E6B68">incl. −20% promo</div>
+        </div>
+        <div style="background: #E3ECF8; border-radius: 14px; padding: 12px">
+          <div style="font-size: 12px; color: #1D4E89; font-weight: 700">Proposed</div>
+          <div style="font-size: 24px; font-weight: 800; color: #14211F; font-variant-numeric: tabular-nums">$60.00</div>
+          <div style="font-size: 12px; color: #1D4E89">≈ ៛246,000</div>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #5E6B68; line-height: 1.45">If you accept, $60.00 becomes the agreed price and replaces the promotion. If you decline, you can pick another technician.</p>
+      <div style="display: flex; gap: 10px">
+        <button style="flex: 1; height: 50px; border-radius: 14px; border: 1.5px solid #C9C4B8; background: #FFFFFF; color: #14211F; font: 700 15px 'Plus Jakarta Sans', sans-serif">Decline</button>
+        <button style="flex: 1.4; height: 50px; border-radius: 14px; border: 0; background: #0E5E56; color: #FFFFFF; font: 700 15px 'Plus Jakarta Sans', sans-serif">Accept $60.00</button>
+      </div>
+    </section>
+
+    <section style="background: #FFFFFF; border-radius: 20px; padding: 16px 18px">
+      <h2 style="margin: 0 0 12px; font-size: 15px; font-weight: 700">Progress</h2>
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="7">
+        <div style="display: flex; gap: 12px">
+          <div style="display: flex; flex-direction: column; align-items: center; width: 20px">
+            <span style="width: 20px; height: 20px; border-radius: 50%; background: {{s.dot}}; border: 2px solid {{s.ring}}; display: flex; align-items: center; justify-content: center">
+              <sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></sc-if>
+            </span>
+            <sc-if value="{{s.line}}" hint-placeholder-val="{{true}}"><span style="width: 2px; height: 18px; background: {{s.lineColor}}"></span></sc-if>
+          </div>
+          <div style="padding-bottom: 6px; display: flex; justify-content: space-between; flex-grow: 1; font-size: 14px">
+            <span style="font-weight: {{s.weight}}; color: {{s.fg}}">{{s.label}}</span><span style="font-size: 12px; color: #5E6B68">{{s.time}}</span>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <button style="height: 44px; border: 0; background: none; color: #A12B2B; font: 700 14px 'Plus Jakarta Sans', sans-serif">Cancel booking</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [['Booked', '08:12', 2], ['Sent to Sokha', '08:12', 2], ['Price proposed', '08:21', 1], ['Confirmed', '', 0], ['On the way', '', 0], ['Work done', '', 0], ['Paid', '', 0]];
+    const steps = raw.map(([label, time, st], i) => ({
+      label, time, done: st === 2, line: i < raw.length - 1,
+      dot: st === 2 ? '#0E5E56' : (st === 1 ? '#1D4E89' : '#FFFFFF'),
+      ring: st === 2 ? '#0E5E56' : (st === 1 ? '#1D4E89' : '#C9C4B8'),
+      lineColor: st === 2 ? '#0E5E56' : '#E4E0D6',
+      weight: st === 1 ? 700 : 500, fg: st === 0 ? '#5E6B68' : '#14211F'
+    }));
+    return { steps };
+  }
+}
+</script>
+</body>
+</html>

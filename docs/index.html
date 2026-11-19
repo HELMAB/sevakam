@@ -166,6 +166,7 @@
       <a href="#problem" data-spy class="relative py-1 transition hover:text-white" data-i18n="nav.problem">Problem</a>
       <a href="#solution" data-spy class="relative py-1 transition hover:text-white" data-i18n="nav.solution">Solution</a>
       <a href="#how" data-spy class="relative py-1 transition hover:text-white" data-i18n="nav.how">How it works</a>
+      <a href="#design" data-spy class="relative py-1 transition hover:text-white" data-i18n="nav.design">Design</a>
       <a href="#model" data-spy class="relative py-1 transition hover:text-white" data-i18n="nav.model">Business model</a>
       <a href="#roadmap" data-spy class="relative py-1 transition hover:text-white" data-i18n="nav.roadmap">Roadmap</a>
     </div>
@@ -191,6 +192,7 @@
     <a href="#problem" class="block rounded-2xl px-4 py-3.5 font-medium text-white/85 hover:bg-white/10" data-i18n="nav.problem">Problem</a>
     <a href="#solution" class="block rounded-2xl px-4 py-3.5 font-medium text-white/85 hover:bg-white/10" data-i18n="nav.solution">Solution</a>
     <a href="#how" class="block rounded-2xl px-4 py-3.5 font-medium text-white/85 hover:bg-white/10" data-i18n="nav.how">How it works</a>
+    <a href="#design" class="block rounded-2xl px-4 py-3.5 font-medium text-white/85 hover:bg-white/10" data-i18n="nav.design">Design</a>
     <a href="#model" class="block rounded-2xl px-4 py-3.5 font-medium text-white/85 hover:bg-white/10" data-i18n="nav.model">Business model</a>
     <a href="#roadmap" class="block rounded-2xl px-4 py-3.5 font-medium text-white/85 hover:bg-white/10" data-i18n="nav.roadmap">Roadmap</a>
     <a href="#invest" class="mt-2 block rounded-2xl bg-amber-500 px-4 py-3.5 text-center font-bold text-ink-900" data-i18n="nav.cta">Invest</a>
@@ -408,6 +410,20 @@
   </div>
 </section>
 
+<!-- ============ PRODUCT DESIGN ============ -->
+<section id="design" class="py-24 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <p class="reveal tracking-label text-sm font-bold uppercase tracking-[.18em] text-amber-600" data-i18n="design.eyebrow">Product design</p>
+      <h2 class="reveal km-tight mt-3 text-3xl font-bold tracking-tight sm:text-4xl" style="--d:80ms" data-i18n="design.title">See every screen before we build it</h2>
+      <p class="reveal km-tight mt-4 text-lg leading-relaxed text-ink-800/70" style="--d:160ms" data-i18n="design.sub">Interactive mockups of the customer app, technician app and admin dashboard, designed from the technical spec. Tap a screen to open it full size.</p>
+    </div>
+
+    <div class="reveal mt-10 flex flex-wrap gap-2" role="tablist" aria-label="Design screens" style="--d:200ms" id="design-tabs"></div>
+    <div class="mt-8" id="design-panels"></div>
+  </div>
+</section>
+
 <!-- ============ WHY NOW ============ -->
 <section class="relative overflow-hidden bg-gradient-to-br from-amber-500 to-amber-600 py-24 text-ink-900 sm:py-28">
   <svg class="pointer-events-none absolute -right-20 -top-20 h-96 w-96 animate-[spin_60s_linear_infinite] opacity-20" viewBox="0 0 200 200"><g fill="none" stroke="#06222f" stroke-width="1"><circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="70" stroke-dasharray="4 6"/><circle cx="100" cy="100" r="50"/><circle cx="100" cy="100" r="30" stroke-dasharray="2 5"/></g></svg>
@@ -559,6 +575,15 @@ const I18N = {
     'solution.3.t': 'Admin dashboard', 'solution.3.d': 'Approve technicians, set service prices, monitor jobs, settle payments and see reports.',
     'how.eyebrow': 'How it works', 'how.title': 'From booking to rating in five steps',
     'feat.eyebrow': 'Product', 'feat.title': 'Built for trust on both sides',
+    'nav.design': 'Design',
+    'design.eyebrow': 'Product design', 'design.title': 'See every screen before we build it',
+    'design.sub': 'Interactive mockups of the customer app, technician app and admin dashboard, designed from the technical spec. Tap a screen to open it full size.',
+    'design.tab.customer': 'Customer app', 'design.tab.tech': 'Technician app', 'design.tab.admin': 'Admin dashboard', 'design.tab.found': 'Design system',
+    'design.open': 'Open full size', 'design.hint': 'Scroll sideways for more screens',
+    'design.C1': 'Home', 'design.C2': 'Choose services', 'design.C3': 'Job details & time', 'design.C4': 'Choose a provider', 'design.C5': 'Review & book',
+    'design.C6': 'Price proposal', 'design.C7': 'Live tracking', 'design.C8': 'Pay with points', 'design.C9': 'Rate the technician',
+    'design.T1': 'Home & online status', 'design.T2': 'Incoming job', 'design.T3': 'Confirm cash', 'design.T4': 'Owner assigns a technician', 'design.T5': 'Points & rewards',
+    'design.A1': 'Dashboard', 'design.A2': 'Job detail', 'design.A3': 'Registration approval', 'design.F': 'Colours, components & job statuses',
     'why.eyebrow': 'Why now', 'why.title': 'Cambodia is ready for on-demand home services',
     'why.1.t': 'Mobile-first market', 'why.1.d': 'Cambodians already book rides, order food and pay through their phones.',
     'why.2.t': 'Digital payments are mainstream', 'why.2.d': 'KHQR and ABA have made mobile payment everyday behaviour.',
@@ -600,6 +625,15 @@ const I18N = {
     'solution.3.t': 'ផ្ទាំងគ្រប់គ្រង', 'solution.3.d': 'អនុម័តជាង កំណត់តម្លៃសេវាកម្ម តាមដានការងារ ទូទាត់ប្រាក់ និងមើលរបាយការណ៍។',
     'how.eyebrow': 'របៀបដំណើរការ', 'how.title': 'ពីការកក់ ដល់ការវាយតម្លៃ ក្នុងប្រាំជំហាន',
     'feat.eyebrow': 'ផលិតផល', 'feat.title': 'បង្កើតឡើងដើម្បីទំនុកចិត្តទាំងសងខាង',
+    'nav.design': 'ការរចនា',
+    'design.eyebrow': 'ការរចនាផលិតផល', 'design.title': 'មើលអេក្រង់នីមួយៗ មុនពេលយើងបង្កើត',
+    'design.sub': 'គំរូអន្តរកម្មនៃកម្មវិធីអតិថិជន កម្មវិធីជាង និងផ្ទាំងគ្រប់គ្រង ដែលរចនាតាមលក្ខណៈបច្ចេកទេស។ ចុចលើអេក្រង់ ដើម្បីបើកទំហំពេញ។',
+    'design.tab.customer': 'កម្មវិធីអតិថិជន', 'design.tab.tech': 'កម្មវិធីជាង', 'design.tab.admin': 'ផ្ទាំងគ្រប់គ្រង', 'design.tab.found': 'ប្រព័ន្ធរចនា',
+    'design.open': 'បើកទំហំពេញ', 'design.hint': 'រំកិលទៅចំហៀង ដើម្បីមើលអេក្រង់បន្ថែម',
+    'design.C1': 'ទំព័រដើម', 'design.C2': 'ជ្រើសរើសសេវាកម្ម', 'design.C3': 'ព័ត៌មានការងារ និងពេលវេលា', 'design.C4': 'ជ្រើសរើសអ្នកផ្តល់សេវា', 'design.C5': 'ពិនិត្យ និងកក់',
+    'design.C6': 'សំណើតម្លៃ', 'design.C7': 'តាមដានផ្ទាល់', 'design.C8': 'ទូទាត់ និងប្រើពិន្ទុ', 'design.C9': 'វាយតម្លៃជាង',
+    'design.T1': 'ទំព័រដើម និងស្ថានភាពអនឡាញ', 'design.T2': 'ការងារថ្មីចូលមក', 'design.T3': 'បញ្ជាក់ការទទួលសាច់ប្រាក់', 'design.T4': 'ម្ចាស់ក្រុមហ៊ុនចាត់តាំងជាង', 'design.T5': 'ពិន្ទុ និងរង្វាន់',
+    'design.A1': 'ផ្ទាំងសង្ខេប', 'design.A2': 'ព័ត៌មានលម្អិតការងារ', 'design.A3': 'អនុម័តការចុះឈ្មោះ', 'design.F': 'ពណ៌ សមាសធាតុ និងស្ថានភាពការងារ',
     'why.eyebrow': 'ហេតុអ្វីឥឡូវនេះ', 'why.title': 'កម្ពុជារួចរាល់សម្រាប់សេវាកម្មតាមផ្ទះតាមតម្រូវការ',
     'why.1.t': 'ទីផ្សារប្រើទូរស័ព្ទជាចម្បង', 'why.1.d': 'ប្រជាជនកម្ពុជាកក់ការធ្វើដំណើរ កុម្ម៉ង់អាហារ និងទូទាត់តាមទូរស័ព្ទរួចហើយ។',
     'why.2.t': 'ការទូទាត់ឌីជីថលក្លាយជារឿងធម្មតា', 'why.2.d': 'KHQR និង ABA បានធ្វើឲ្យការទូទាត់តាមទូរស័ព្ទក្លាយជាទម្លាប់ប្រចាំថ្ងៃ។',
@@ -865,6 +899,103 @@ if (!reduce && matchMedia('(pointer: fine)').matches) {
     });
   });
 }
+
+/* ---------------- product design gallery ---------------- */
+(function () {
+  const base = 'design/screens/';
+  const groups = [
+    { id: 'customer', tab: 'design.tab.customer', kind: 'phone', items: ['C1-Home', 'C2-Subservices', 'C3-Details', 'C4-Provider', 'C5-Review', 'C6-PriceProposal', 'C7-OnTheWay', 'C8-Pay', 'C9-Rate'] },
+    { id: 'tech', tab: 'design.tab.tech', kind: 'phone', items: ['T1-Home', 'T2-Incoming', 'T3-ConfirmCash', 'T4-CompanyAssign', 'T5-Score'] },
+    { id: 'admin', tab: 'design.tab.admin', kind: 'wide', w: 1440, h: 1100, items: ['A1-Dashboard', 'A2-JobDetail', 'A3-Approval'] },
+    { id: 'found', tab: 'design.tab.found', kind: 'wide', w: 1440, h: 1040, items: ['Foundations'] },
+  ];
+  const key = (f) => 'design.' + (f === 'Foundations' ? 'F' : f.split('-')[0]);
+  const tabs = document.getElementById('design-tabs');
+  const panels = document.getElementById('design-panels');
+  const openIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M19 14v6H4V5h6"/></svg>';
+
+  groups.forEach((g, gi) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.id = 'design-tab-' + g.id;
+    b.setAttribute('aria-controls', 'design-panel-' + g.id);
+    b.className = 'rounded-full px-5 py-2.5 text-sm font-bold ring-1 transition';
+    b.innerHTML = '<span data-i18n="' + g.tab + '"></span> <span class="opacity-60">' + g.items.length + '</span>';
+    b.addEventListener('click', () => select(gi));
+    tabs.appendChild(b);
+
+    const p = document.createElement('div');
+    p.id = 'design-panel-' + g.id;
+    p.setAttribute('role', 'tabpanel');
+    p.setAttribute('aria-labelledby', b.id);
+    if (g.kind === 'phone') {
+      p.innerHTML = '<p class="mb-4 text-sm text-ink-800/60 sm:hidden" data-i18n="design.hint"></p>' +
+        '<div class="-mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-6 sm:mx-0 sm:px-0">' +
+        g.items.map((f, i) =>
+          '<figure class="w-[242px] shrink-0 snap-start">' +
+            '<a href="' + base + f + '.dc.html" target="_blank" rel="noopener" class="group block">' +
+              '<div class="relative h-[523px] w-[242px] overflow-hidden rounded-[28px] bg-white shadow-lg ring-1 ring-ink-800/10 transition duration-300 group-hover:-translate-y-1 group-hover:shadow-2xl">' +
+                '<iframe src="' + base + f + '.dc.html" loading="lazy" tabindex="-1" aria-hidden="true" class="pointer-events-none absolute left-0 top-0 origin-top-left border-0" style="width:390px;height:844px;transform:scale(.6205)"></iframe>' +
+              '</div>' +
+            '</a>' +
+            '<figcaption class="mt-3 flex items-start justify-between gap-2 text-sm">' +
+              '<span><span class="font-bold text-amber-600">' + f.split('-')[0] + '</span> <span class="km-tight font-medium" data-i18n="' + key(f) + '"></span></span>' +
+              '<a href="' + base + f + '.dc.html" target="_blank" rel="noopener" class="inline-flex shrink-0 items-center gap-1 font-bold text-ink-700 hover:text-ink-900"><span class="sr-only" data-i18n="design.open"></span>' + openIcon + '</a>' +
+            '</figcaption>' +
+          '</figure>').join('') +
+        '</div>';
+    } else {
+      p.innerHTML = '<div class="grid gap-10">' + g.items.map((f) =>
+        '<figure>' +
+          '<a href="' + base + f + '.dc.html" target="_blank" rel="noopener" class="group block">' +
+            '<div class="design-wide relative w-full overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-ink-800/10 transition duration-300 group-hover:shadow-2xl" data-w="' + g.w + '" data-h="' + g.h + '">' +
+              '<iframe src="' + base + f + '.dc.html" loading="lazy" tabindex="-1" aria-hidden="true" class="pointer-events-none absolute left-0 top-0 origin-top-left border-0" style="width:' + g.w + 'px;height:' + g.h + 'px"></iframe>' +
+            '</div>' +
+          '</a>' +
+          '<figcaption class="mt-3 flex items-center justify-between gap-2 text-sm">' +
+            '<span><span class="font-bold text-amber-600">' + (f === 'Foundations' ? '' : f.split('-')[0]) + '</span> <span class="km-tight font-medium" data-i18n="' + key(f) + '"></span></span>' +
+            '<a href="' + base + f + '.dc.html" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 font-bold text-ink-700 hover:text-ink-900"><span data-i18n="design.open"></span>' + openIcon + '</a>' +
+          '</figcaption>' +
+        '</figure>').join('') + '</div>';
+    }
+    panels.appendChild(p);
+  });
+
+  // scale wide (desktop-size) screens to the column width
+  const fit = (box) => {
+    const s = box.clientWidth / +box.dataset.w;
+    box.style.height = Math.round(+box.dataset.h * s) + 'px';
+    box.querySelector('iframe').style.transform = 'scale(' + s + ')';
+  };
+  const ro = new ResizeObserver((entries) => entries.forEach((e) => fit(e.target)));
+  document.querySelectorAll('.design-wide').forEach((box) => ro.observe(box));
+
+  function select(i) {
+    [...tabs.children].forEach((b, j) => {
+      const on = i === j;
+      b.setAttribute('aria-selected', on);
+      b.tabIndex = on ? 0 : -1;
+      b.classList.toggle('bg-ink-800', on);
+      b.classList.toggle('text-white', on);
+      b.classList.toggle('ring-ink-800', on);
+      b.classList.toggle('bg-white', !on);
+      b.classList.toggle('text-ink-800', !on);
+      b.classList.toggle('ring-ink-800/10', !on);
+    });
+    [...panels.children].forEach((p, j) => { p.hidden = i !== j; });
+    panels.querySelectorAll('.design-wide').forEach(fit);
+  }
+  tabs.addEventListener('keydown', (e) => {
+    const n = tabs.children.length, cur = [...tabs.children].findIndex((b) => b.getAttribute('aria-selected') === 'true');
+    const next = e.key === 'ArrowRight' ? (cur + 1) % n : e.key === 'ArrowLeft' ? (cur - 1 + n) % n : -1;
+    if (next < 0) return;
+    e.preventDefault();
+    select(next);
+    tabs.children[next].focus();
+  });
+  select(0);
+})();
 
 /* ---------------- init ---------------- */
 document.querySelectorAll('[data-lang-btn]').forEach((b) => b.addEventListener('click', () => applyLang(b.dataset.langBtn)));

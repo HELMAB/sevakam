@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sevakam foundations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1040px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; padding: 56px; display: flex; flex-direction: column; gap: 40px">
+
+  <div style="display: flex; align-items: flex-end; justify-content: space-between">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <div style="width: 56px; height: 56px; border-radius: 16px; background: {{primary}}; display: flex; align-items: center; justify-content: center">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#F2B33D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M14.7 11.3a2.6 2.6 0 0 0-3.5 3.5L8.5 17.5l1 1 2.7-2.7a2.6 2.6 0 0 0 3.5-3.5l-1.4 1.4-1.2-.2-.2-1.2z" stroke="#FFFFFF" stroke-width="1.6"/></svg>
+      </div>
+      <div>
+        <div style="font-size: 40px; font-weight: 800; letter-spacing: -0.02em; line-height: 1">Sevakam</div>
+        <div style="font-size: 16px; color: #5E6B68; margin-top: 6px">Home services for Cambodia: book trusted technicians, track them live, pay after the job.</div>
+      </div>
+    </div>
+    <div style="font-size: 14px; color: #5E6B68; text-align: right; line-height: 1.6">Customer app · Technician app · Admin<br>Plus Jakarta Sans · 8 px grid · 12/16/24 radius</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1.15fr 1.25fr; gap: 32px; flex-grow: 1; min-height: 0">
+
+    <section style="background: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+      <h2 style="margin: 0; font-size: 20px; font-weight: 700">Colour</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+        <div style="border-radius: 16px; background: {{primary}}; color: #FFFFFF; padding: 16px; height: 108px; display: flex; flex-direction: column; justify-content: flex-end"><div style="font-weight: 700">Primary · Teal</div><div style="font-size: 13px; opacity: .85">#0E5E56 · actions, brand</div></div>
+        <div style="border-radius: 16px; background: #F2B33D; color: #14211F; padding: 16px; height: 108px; display: flex; flex-direction: column; justify-content: flex-end"><div style="font-weight: 700">Accent · Turmeric</div><div style="font-size: 13px">#F2B33D · promos, points</div></div>
+        <div style="border-radius: 16px; background: #14211F; color: #FFFFFF; padding: 16px; height: 84px; display: flex; flex-direction: column; justify-content: flex-end"><div style="font-weight: 700">Ink</div><div style="font-size: 13px; opacity: .8">#14211F</div></div>
+        <div style="border-radius: 16px; background: #F6F4EF; border: 1px solid #E4E0D6; padding: 16px; height: 84px; display: flex; flex-direction: column; justify-content: flex-end"><div style="font-weight: 700">Ground</div><div style="font-size: 13px; color: #5E6B68">#F6F4EF</div></div>
+        <div style="border-radius: 16px; background: #E3F0EC; padding: 16px; height: 84px; display: flex; flex-direction: column; justify-content: flex-end"><div style="font-weight: 700; color: #0E5E56">Teal soft</div><div style="font-size: 13px; color: #0E5E56">#E3F0EC</div></div>
+        <div style="border-radius: 16px; background: #FFFFFF; border: 1px solid #E4E0D6; padding: 16px; height: 84px; display: flex; flex-direction: column; justify-content: flex-end"><div style="font-weight: 700">Muted text</div><div style="font-size: 13px; color: #5E6B68">#5E6B68 · line #E4E0D6</div></div>
+      </div>
+      <h2 style="margin: 8px 0 0; font-size: 20px; font-weight: 700">Type</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em">Display 28 / 800</div>
+        <div style="font-size: 20px; font-weight: 700">Title 20 / 700</div>
+        <div style="font-size: 16px; font-weight: 600">Label 16 / 600</div>
+        <div style="font-size: 15px; color: #3A4745">Body 15 / 400, lists and descriptions</div>
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5E6B68">Overline 12 / 600</div>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #5E6B68; line-height: 1.5">Khmer-ready: when km lands, pair with Kantumruy Pro at the same weights. All copy goes through i18n keys.</p>
+    </section>
+
+    <section style="background: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+      <h2 style="margin: 0; font-size: 20px; font-weight: 700">Components</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5E6B68">Buttons</div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <button style="height: 48px; padding: 0 22px; border: 0; border-radius: 14px; background: {{primary}}; color: #FFFFFF; font: 700 15px 'Plus Jakarta Sans', sans-serif">Book now</button>
+          <button style="height: 48px; padding: 0 22px; border: 1.5px solid #0E5E56; border-radius: 14px; background: #FFFFFF; color: #0E5E56; font: 700 15px 'Plus Jakarta Sans', sans-serif">Propose time</button>
+          <button style="height: 48px; padding: 0 22px; border: 0; border-radius: 14px; background: #F8E3E1; color: #A12B2B; font: 700 15px 'Plus Jakarta Sans', sans-serif">Reject</button>
+          <button disabled style="height: 48px; padding: 0 22px; border: 0; border-radius: 14px; background: #EEEDE8; color: #8A9391; font: 700 15px 'Plus Jakarta Sans', sans-serif">Disabled</button>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5E6B68">Price: USD first, KHR beneath</div>
+        <div style="display: flex; gap: 28px; align-items: flex-end">
+          <div><div style="font-size: 32px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.02em">$44.00</div><div style="font-size: 14px; color: #5E6B68; font-variant-numeric: tabular-nums">≈ ៛180,400</div></div>
+          <div><div style="font-size: 15px; color: #8A9391; text-decoration: line-through; font-variant-numeric: tabular-nums">$55.00</div><div style="display: flex; align-items: center; gap: 8px"><span style="font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums">$44.00</span><span style="font-size: 12px; font-weight: 700; background: #F2B33D; padding: 3px 8px; border-radius: 999px">−20%</span></div></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5E6B68">Input</div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email
+          <input value="dara@example.com" style="height: 48px; border: 1.5px solid #E4E0D6; border-radius: 12px; padding: 0 14px; font: 400 15px 'Plus Jakarta Sans', sans-serif; color: #14211F; background: #FFFFFF">
+        </label>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5E6B68">Job card</div>
+        <div style="border: 1px solid #E4E0D6; border-radius: 16px; padding: 16px; display: flex; gap: 14px; align-items: center">
+          <div style="width: 48px; height: 48px; border-radius: 14px; background: #E3F0EC; display: flex; align-items: center; justify-content: center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E5E56" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M4 7l16 10M20 7 4 17"/></svg>
+          </div>
+          <div style="flex-grow: 1">
+            <div style="font-weight: 700">Air-con cleaning ×2</div>
+            <div style="font-size: 13px; color: #5E6B68">Thu 20 Nov · 10:00 · Sokha Chea</div>
+          </div>
+          <span style="font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: #ECE8F8; color: #4B3C8F">On the way</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5E6B68">Countdown (15-min response window)</div>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <div style="flex-grow: 1; height: 8px; border-radius: 99px; background: #FCEFD2"><div style="width: 62%; height: 8px; border-radius: 99px; background: #F2B33D"></div></div>
+          <span style="font-weight: 700; font-variant-numeric: tabular-nums; color: #8A5A00">09:18 left</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+      <h2 style="margin: 0; font-size: 20px; font-weight: 700">Job status system</h2>
+      <p style="margin: 0 0 4px; font-size: 14px; color: #5E6B68">One chip per status, the same in all three apps. Colour family = whose turn it is.</p>
+      <sc-for list="{{statuses}}" as="s" hint-placeholder-count="11">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px solid #F0EDE6">
+          <span style="width: 152px; flex-shrink: 0"><span style="font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: {{s.bg}}; color: {{s.fg}}; white-space: nowrap">{{s.label}}</span></span>
+          <span style="font-size: 13px; color: #5E6B68; width: 110px; flex-shrink: 0">{{s.wait}}</span>
+          <span style="font-size: 13px; color: #14211F">{{s.cta}}</span>
+        </div>
+      </sc-for>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"primary":{"editor":"color","default":"#0E5E56","options":["#0E5E56","#1D4E89","#7A2E3A","#2F5D2E"]},"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const s = (label, wait, cta, bg, fg) => ({ label, wait, cta, bg, fg });
+    const amber = ['#FCEFD2', '#7A4E00'], blue = ['#E3ECF8', '#1D4E89'], red = ['#F8E3E1', '#A12B2B'],
+      teal = ['#E3F0EC', '#0E5E56'], violet = ['#ECE8F8', '#4B3C8F'], orange = ['#FBE6D6', '#8F430A'],
+      green = ['#E2F2E6', '#1F6B3A'], gray = ['#EEEDE8', '#4F5957'];
+    return {
+      primary: this.props.primary ?? '#0E5E56',
+      statuses: [
+        s('Waiting for company', 'Owner', 'Owner assigns an employee', ...amber),
+        s('Waiting for technician', 'Technician', 'Accept · adjust price · new time', ...amber),
+        s('Price proposed', 'Customer', 'Accept or decline new price', ...blue),
+        s('New time proposed', 'Customer', 'Approve or decline time', ...blue),
+        s('Needs new technician', 'Customer', 'Choose another provider', ...red),
+        s('Confirmed', 'Appointment', 'Cancel until 2 h before', ...teal),
+        s('On the way', 'Technician', 'Live map for customer', ...violet),
+        s('In progress', 'Technician', 'Technician completes', ...violet),
+        s('Awaiting payment', 'Customer', 'Pay: cash or ABA PayWay', ...orange),
+        s('Paid', 'Done', 'Rate technician · receipt', ...green),
+        s('Cancelled', 'Done', 'Shows who cancelled + reason', ...gray)
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

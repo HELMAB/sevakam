@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Customer home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-direction: column; overflow: hidden">
+  <div style="flex-grow: 1; overflow: hidden; padding: 20px 20px 0; display: flex; flex-direction: column; gap: 18px">
+
+    <div style="display: flex; align-items: center; justify-content: space-between">
+      <div>
+        <div style="font-size: 14px; color: #5E6B68">Good morning, Dara</div>
+        <button style="margin-top: 4px; display: flex; align-items: center; gap: 6px; border: 0; background: none; padding: 0; font: 700 17px 'Plus Jakarta Sans', sans-serif; color: #14211F">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E5E56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Home · St. 278, BKK1
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14211F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px">
+        <span style="height: 32px; padding: 0 10px; border-radius: 999px; background: #FCEFD2; color: #7A4E00; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 4px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#F2B33D" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>1,240 pts
+        </span>
+      </div>
+    </div>
+
+    <label style="height: 48px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E4E0D6; display: flex; align-items: center; gap: 10px; padding: 0 14px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input placeholder="Search services or companies" aria-label="Search services or companies" style="border: 0; outline: 0; flex-grow: 1; font: 400 15px 'Plus Jakarta Sans', sans-serif; background: transparent; color: #14211F">
+    </label>
+
+    <div style="border-radius: 20px; background: #14211F; color: #FFFFFF; padding: 18px; display: flex; gap: 14px; position: relative; overflow: hidden">
+      <div style="position: absolute; right: -30px; top: -30px; width: 140px; height: 140px; border-radius: 50%; background: #F2B33D"></div>
+      <div style="position: absolute; right: 18px; top: 22px; font-size: 30px; font-weight: 800; color: #14211F; letter-spacing: -0.03em">−20%</div>
+      <div style="display: flex; flex-direction: column; gap: 6px; max-width: 220px; position: relative">
+        <span style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #F2B33D">Promotion · until 30 Nov</span>
+        <div style="font-size: 18px; font-weight: 700; line-height: 1.3">Air-con cleaning with CoolTech Co.</div>
+        <a href="C2-Subservices.dc.html" style="margin-top: 6px; align-self: flex-start; height: 36px; padding: 0 14px; border-radius: 10px; background: #FFFFFF; color: #14211F; font-size: 14px; font-weight: 700; display: flex; align-items: center">Book now</a>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 700">Services</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+        <sc-for list="{{services}}" as="sv" hint-placeholder-count="8">
+          <a href="{{sv.href}}" style="display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 4px; border-radius: 16px; background: #FFFFFF; color: #14211F">
+            <span style="width: 44px; height: 44px; border-radius: 14px; background: #E3F0EC; display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0E5E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{sv.icon}}"/></svg>
+            </span>
+            <span style="font-size: 12px; font-weight: 600; text-align: center; line-height: 1.2">{{sv.name}}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 700">Top companies near you</h2>
+        <a href="#" style="font-size: 14px; font-weight: 600">See all</a>
+      </div>
+      <div style="display: flex; gap: 12px">
+        <sc-for list="{{companies}}" as="c" hint-placeholder-count="2">
+          <div style="flex: 0 0 236px; background: #FFFFFF; border-radius: 16px; padding: 14px; display: flex; gap: 12px; align-items: center">
+            <div style="width: 48px; height: 48px; border-radius: 14px; background: {{c.bg}}; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center">{{c.init}}</div>
+            <div style="min-width: 0">
+              <div style="font-weight: 700; font-size: 15px">{{c.name}}</div>
+              <div style="font-size: 13px; color: #5E6B68; display: flex; align-items: center; gap: 4px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#F2B33D" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>{{c.meta}}
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Main" style="height: 76px; background: #FFFFFF; border-top: 1px solid #E4E0D6; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-bottom: 8px">
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 700; color: #0E5E56"><svg width="24" height="24" viewBox="0 0 24 24" fill="#E3F0EC" stroke="#0E5E56" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #5E6B68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg>Jobs</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #5E6B68; position: relative"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>Alerts<span style="position: absolute; top: 12px; left: 54%; width: 8px; height: 8px; border-radius: 50%; background: #C2410C"></span></a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #5E6B68"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Account</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      services: [
+        { name: 'Air-con', href: 'C2-Subservices.dc.html', icon: 'M12 2v20M4 7l16 10M20 7 4 17M9 3.5l3 2 3-2M9 20.5l3-2 3 2' },
+        { name: 'Plumbing', href: '#', icon: 'M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z' },
+        { name: 'Electrical', href: '#', icon: 'M13 2 4 14h7l-1 8 9-12h-7z' },
+        { name: 'Cleaning', href: '#', icon: 'M19 3l-7 7M9 10l5 5-2 6H5l-2-2 2-7zM7 16l2 2' },
+        { name: 'Appliances', href: '#', icon: 'M6 3h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM12 9a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM8 6h.01M11 6h.01' },
+        { name: 'Pest control', href: '#', icon: 'M12 7a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0v-4a4 4 0 0 1 4-4zM12 7V4M4 11h4M16 11h4M4 17h4M16 17h4' },
+        { name: 'Painting', href: '#', icon: 'M4 4h13v5H4zM17 6h3v6h-8v3M10 15h4v6h-4z' },
+        { name: 'CCTV', href: '#', icon: 'M3 7l13-3 2 6-13 3zM6 13l1 4h5M18 8l3 1M12 17v3' }
+      ],
+      companies: [
+        { init: 'CT', name: 'CoolTech Co.', meta: '4.8 · 212 jobs · 1.9 km', bg: '#0E5E56' },
+        { init: 'MF', name: 'MekongFix', meta: '4.7 · 168 jobs · 3.2 km', bg: '#1D4E89' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

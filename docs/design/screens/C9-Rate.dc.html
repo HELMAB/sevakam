@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rate technician</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-direction: column; overflow: hidden">
+  <header style="padding: 16px 20px 0; display: flex; justify-content: flex-end">
+    <button style="height: 44px; padding: 0 12px; border: 0; background: none; font: 600 14px 'Plus Jakarta Sans', sans-serif; color: #5E6B68">Skip</button>
+  </header>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 0 20px; display: flex; flex-direction: column; gap: 18px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 14px; background: #E2F2E6; color: #1F6B3A; font-size: 14px; font-weight: 600">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F6B3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+      Paid $48.00 · +480 points added
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: #0E5E56; color: #FFFFFF; font-weight: 800; font-size: 22px; display: flex; align-items: center; justify-content: center">SC</div>
+      <h1 style="margin: 0; font-size: 22px; font-weight: 800">How was Sokha?</h1>
+      <div style="font-size: 14px; color: #5E6B68">Air-con cleaning &amp; gas refill · today</div>
+      <div role="radiogroup" aria-label="Rating" style="display: flex; gap: 6px; margin-top: 4px">
+        <sc-for list="{{stars}}" as="s" hint-placeholder-count="5">
+          <button role="radio" aria-checked="{{s.on}}" aria-label="{{s.label}}" style="width: 52px; height: 52px; border: 0; background: none; padding: 0; display: flex; align-items: center; justify-content: center">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="{{s.fill}}" stroke="{{s.stroke}}" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
+          </button>
+        </sc-for>
+      </div>
+      <div style="font-size: 14px; font-weight: 700">Good</div>
+    </div>
+
+    <section style="display: flex; flex-direction: column; gap: 10px">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 700">What could be better?</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <sc-for list="{{reasons}}" as="r" hint-placeholder-count="5">
+          <button aria-pressed="{{r.on}}" style="height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid {{r.border}}; background: {{r.bg}}; color: {{r.fg}}; font: 600 13px 'Plus Jakarta Sans', sans-serif">{{r.t}}</button>
+        </sc-for>
+      </div>
+    </section>
+
+    <label style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; font-weight: 700">Tell others more (optional)
+      <textarea rows="3" style="border: 1.5px solid #E4E0D6; border-radius: 14px; padding: 12px; font: 400 14px 'Plus Jakarta Sans', sans-serif; color: #14211F; resize: none; background: #FFFFFF">Cleaned both units well and explained the leak. Arrived 20 minutes late.</textarea>
+    </label>
+
+    <div style="display: flex; gap: 8px; align-items: center">
+      <button aria-label="Add photo" style="width: 64px; height: 64px; border-radius: 14px; border: 2px dashed #C9C4B8; background: transparent; display: flex; align-items: center; justify-content: center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5E6B68" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      </button>
+      <span style="font-size: 13px; color: #5E6B68">Add photos of the finished work</span>
+    </div>
+  </div>
+
+  <div style="background: #FFFFFF; border-top: 1px solid #E4E0D6; padding: 14px 20px 22px">
+    <button style="width: 100%; height: 52px; border-radius: 14px; border: 0; background: #0E5E56; color: #FFFFFF; font: 700 15px 'Plus Jakarta Sans', sans-serif">Submit rating</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const n = 4;
+    const stars = [1, 2, 3, 4, 5].map((i) => ({ on: i === n, label: i + ' star' + (i > 1 ? 's' : ''), fill: i <= n ? '#F2B33D' : 'none', stroke: i <= n ? '#D9971F' : '#C9C4B8' }));
+    const picked = ['Arrived late'];
+    const reasons = ['Arrived late', 'Price higher than expected', 'Left a mess', 'Hard to reach', 'Work not finished'].map((t) => {
+      const on = picked.indexOf(t) >= 0;
+      return { t, on, border: on ? '#0E5E56' : '#E4E0D6', bg: on ? '#E3F0EC' : '#FFFFFF', fg: on ? '#0E5E56' : '#14211F' };
+    });
+    return { stars, reasons };
+  }
+}
+</script>
+</body>
+</html>

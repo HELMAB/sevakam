@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin job detail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-wrap: wrap; align-items: stretch">
+  <aside style="flex: 1 1 240px; max-width: 100%; background: #14211F; color: #FFFFFF; padding: 22px 14px; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+      <div style="width: 36px; height: 36px; border-radius: 10px; background: #0E5E56; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2B33D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5.5 9.5V20h13V9.5"/></svg></div>
+      <div><div style="font-weight: 800; font-size: 17px">Sevakam</div><div style="font-size: 12px; color: #A9B5B2">Admin</div></div>
+    </div>
+    <nav aria-label="Admin" style="display: flex; flex-direction: column; gap: 2px">
+      <sc-for list="{{nav}}" as="n" hint-placeholder-count="12">
+        <sc-if value="{{n.head}}" hint-placeholder-val="{{false}}"><div style="font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #8C9A97; padding: 14px 10px 6px">{{n.label}}</div></sc-if>
+        <sc-if value="{{n.link}}" hint-placeholder-val="{{true}}">
+          <a href="#" style="height: 40px; border-radius: 10px; padding: 0 10px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: {{n.weight}}; color: {{n.fg}}; background: {{n.bg}}">
+            <span style="flex-grow: 1">{{n.label}}</span>
+            <sc-if value="{{n.badge}}" hint-placeholder-val="{{false}}"><span style="min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; background: #F2B33D; color: #14211F; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{n.badge}}</span></sc-if>
+          </a>
+        </sc-if>
+      </sc-for>
+    </nav>
+  </aside>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 24px clamp(16px, 3vw, 36px) 40px; display: flex; flex-direction: column; gap: 20px">
+    <div style="font-size: 13px; color: #5E6B68"><a href="#">Jobs</a> / SV-24117</div>
+    <header style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between">
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+        <h1 style="margin: 0; font-size: 26px; font-weight: 800">SV-24117</h1>
+        <span style="font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; background: #FBE6D6; color: #8F430A">Awaiting payment</span>
+        <span style="font-size: 14px; color: #5E6B68">Air-con · booked 19 Nov 08:12</span>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap">
+        <button style="height: 40px; padding: 0 16px; border-radius: 10px; border: 1px solid #E4E0D6; background: #FFFFFF; color: #14211F; font: 600 14px 'Plus Jakarta Sans', sans-serif">Reassign</button>
+        <button style="height: 40px; padding: 0 16px; border-radius: 10px; border: 1px solid #E4E0D6; background: #FFFFFF; color: #14211F; font: 600 14px 'Plus Jakarta Sans', sans-serif">Mark paid</button>
+        <button style="height: 40px; padding: 0 16px; border-radius: 10px; border: 1px solid #E4E0D6; background: #FFFFFF; color: #14211F; font: 600 14px 'Plus Jakarta Sans', sans-serif">Refund</button>
+        <button style="height: 40px; padding: 0 16px; border-radius: 10px; border: 0; background: #F8E3E1; color: #A12B2B; font: 700 14px 'Plus Jakarta Sans', sans-serif">Cancel job</button>
+      </div>
+    </header>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+      <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 17px; font-weight: 700">Items &amp; price</h2>
+          <div style="overflow-x: auto">
+            <table style="width: 100%; min-width: 480px; border-collapse: collapse; font-size: 14px">
+              <thead><tr style="text-align: left; color: #5E6B68; font-size: 12px; text-transform: uppercase; letter-spacing: .05em"><th style="padding: 8px 6px; font-weight: 700">Subservice</th><th style="padding: 8px 6px; font-weight: 700">Qty</th><th style="padding: 8px 6px; font-weight: 700">Base</th><th style="padding: 8px 6px; font-weight: 700">Promo</th><th style="padding: 8px 6px; font-weight: 700; text-align: right">Line</th></tr></thead>
+              <tbody>
+                <tr style="border-top: 1px solid #F0EDE6"><td style="padding: 10px 6px">General cleaning (wall unit)</td><td style="padding: 10px 6px">2</td><td style="padding: 10px 6px">$15.00</td><td style="padding: 10px 6px">−20%</td><td style="padding: 10px 6px; text-align: right; font-variant-numeric: tabular-nums">$24.00</td></tr>
+                <tr style="border-top: 1px solid #F0EDE6"><td style="padding: 10px 6px">Gas refill (R32)</td><td style="padding: 10px 6px">1</td><td style="padding: 10px 6px">$25.00</td><td style="padding: 10px 6px">−20%</td><td style="padding: 10px 6px; text-align: right; font-variant-numeric: tabular-nums">$20.00</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px">
+            <div style="background: #F6F4EF; border-radius: 12px; padding: 12px"><div style="font-size: 12px; color: #5E6B68">Estimate</div><div style="font-weight: 800; font-size: 18px">$44.00</div></div>
+            <div style="background: #E3ECF8; border-radius: 12px; padding: 12px"><div style="font-size: 12px; color: #1D4E89">Proposed → agreed</div><div style="font-weight: 800; font-size: 18px">$60.00</div></div>
+            <div style="background: #FCEFD2; border-radius: 12px; padding: 12px"><div style="font-size: 12px; color: #7A4E00">Points used</div><div style="font-weight: 800; font-size: 18px">−$12.00</div></div>
+            <div style="background: #FBE6D6; border-radius: 12px; padding: 12px"><div style="font-size: 12px; color: #8F430A">Final · cash</div><div style="font-weight: 800; font-size: 18px">$48.00</div></div>
+          </div>
+        </section>
+
+        <section style="background: #FFFFFF; border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+          <h2 style="margin: 0 0 10px; font-size: 17px; font-weight: 700">Status history</h2>
+          <sc-for list="{{history}}" as="h" hint-placeholder-count="7">
+            <div style="display: grid; grid-template-columns: 110px 14px 1fr; gap: 12px; align-items: start">
+              <span style="font-size: 13px; color: #5E6B68; font-variant-numeric: tabular-nums; padding-top: 1px">{{h.time}}</span>
+              <span style="display: flex; flex-direction: column; align-items: center; height: 100%"><span style="width: 12px; height: 12px; border-radius: 50%; background: {{h.c}}; margin-top: 3px"></span><span style="flex-grow: 1; width: 2px; background: #EAE6DC; min-height: 22px"></span></span>
+              <span style="padding-bottom: 12px"><span style="display: block; font-weight: 700; font-size: 14px">{{h.what}}</span><span style="display: block; font-size: 13px; color: #5E6B68">{{h.who}}</span></span>
+            </div>
+          </sc-for>
+        </section>
+      </div>
+
+      <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 15px; font-weight: 700">Customer</h2>
+          <div style="display: flex; gap: 12px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 50%; background: #D8CFBD; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center">DS</div><div><div style="font-weight: 700">Dara S.</div><div style="font-size: 13px; color: #5E6B68">12 jobs · 1,240 → 40 pts</div></div></div>
+          <div style="font-size: 13px; color: #5E6B68">#24, St. 278, BKK1, Phnom Penh</div>
+        </section>
+        <section style="background: #FFFFFF; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 15px; font-weight: 700">Provider</h2>
+          <div style="display: flex; gap: 12px; align-items: center"><div style="width: 40px; height: 40px; border-radius: 50%; background: #0E5E56; color: #FFFFFF; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center">SC</div><div><div style="font-weight: 700">Sokha Chea</div><div style="font-size: 13px; color: #5E6B68">Employee · CoolTech Co.</div></div></div>
+          <div style="font-size: 13px; color: #5E6B68">Rating 4.9 (128) · acceptance 97% (90 d)</div>
+        </section>
+        <section style="background: #FFFFFF; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+          <h2 style="margin: 0; font-size: 15px; font-weight: 700">Assignments</h2>
+          <div style="display: flex; justify-content: space-between; font-size: 13px"><span>Sokha Chea</span><span style="font-weight: 700; color: #1D4E89">Price proposed · 9 min</span></div>
+          <div style="font-size: 12px; color: #5E6B68">Counts toward ranking · answered within the 15-min window</div>
+        </section>
+        <section style="background: #FFFFFF; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+          <h2 style="margin: 0; font-size: 15px; font-weight: 700">Payments</h2>
+          <div style="display: flex; justify-content: space-between; font-size: 13px"><span>#P-8812 · cash</span><span style="font-weight: 700; color: #8F430A">Pending · $48.00</span></div>
+          <div style="font-size: 12px; color: #5E6B68">Waiting for the technician to confirm cash received</div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const L = (label, badge, active) => ({ link: true, head: false, label, badge: badge || '', weight: active ? 700 : 500, fg: active ? '#FFFFFF' : '#C9D2D0', bg: active ? '#0E5E56' : 'transparent' });
+    const H = (label) => ({ head: true, link: false, label });
+    const nav = [
+      L('Dashboard'), L('Jobs', 0, true), L('Approvals', 4), H('People'), L('Customers'), L('Technicians'), L('Companies'),
+      H('Catalog'), L('Services'), L('Reasons'), L('Promotions', 2), L('Ratings'),
+      H('Money'), L('Settlements'), L('Rewards'), L('Reward requests', 3), L('Reports'), H('System'), L('Settings'), L('Pages')
+    ];
+    const history = [
+      { time: '19 Nov 08:12', what: 'Booked → Waiting for technician', who: 'Customer · Dara S.', c: '#F2B33D' },
+      { time: '19 Nov 08:21', what: 'Price proposed $60.00', who: 'Technician · Sokha Chea', c: '#5B8BD0' },
+      { time: '19 Nov 08:40', what: 'Price accepted → Confirmed', who: 'Customer', c: '#0E5E56' },
+      { time: '20 Nov 09:31', what: 'On the way', who: 'Technician', c: '#7E6BC4' },
+      { time: '20 Nov 10:02', what: 'In progress', who: 'Technician', c: '#7E6BC4' },
+      { time: '20 Nov 11:24', what: 'Completed → Awaiting payment', who: 'Technician', c: '#D9822B' },
+      { time: '20 Nov 11:26', what: 'Cash payment started, 1,200 pts held', who: 'Customer', c: '#D9822B' }
+    ];
+    return { nav, history };
+  }
+}
+</script>
+</body>
+</html>

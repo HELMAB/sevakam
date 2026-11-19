@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Choose subservices</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0E5E56;text-decoration:none}a:hover{color:#0A4540}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F6F4EF; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #14211F; display: flex; flex-direction: column; overflow: hidden">
+  <header style="padding: 16px 20px 8px; display: flex; align-items: center; gap: 12px">
+    <a href="C1-Home.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14211F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+    <div>
+      <h1 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.01em">Air-con</h1>
+      <div style="font-size: 13px; color: #5E6B68">Select one or more · set quantity</div>
+    </div>
+  </header>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 12px 20px; display: flex; flex-direction: column; gap: 10px">
+    <sc-for list="{{items}}" as="it" hint-placeholder-count="5">
+      <div style="background: #FFFFFF; border-radius: 16px; padding: 14px; display: flex; align-items: center; gap: 12px; border: 2px solid {{it.border}}">
+        <button onClick="{{it.toggle}}" aria-label="Select {{it.name}}" aria-pressed="{{it.on}}" style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 8px; border: 2px solid {{it.boxBorder}}; background: {{it.boxBg}}; display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
+        </button>
+        <div style="flex-grow: 1; min-width: 0">
+          <div style="font-weight: 700; font-size: 15px">{{it.name}}</div>
+          <div style="font-size: 13px; color: #5E6B68">{{it.priceLabel}}</div>
+        </div>
+        <sc-if value="{{it.on}}" hint-placeholder-val="{{true}}">
+          <div style="display: flex; align-items: center; gap: 4px; background: #F6F4EF; border-radius: 12px; padding: 2px">
+            <button onClick="{{it.dec}}" aria-label="Decrease" style="width: 36px; height: 36px; border: 0; border-radius: 10px; background: #FFFFFF; font: 700 18px 'Plus Jakarta Sans', sans-serif; color: #14211F; cursor: pointer">−</button>
+            <span style="width: 24px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums">{{it.qty}}</span>
+            <button onClick="{{it.inc}}" aria-label="Increase" style="width: 36px; height: 36px; border: 0; border-radius: 10px; background: #FFFFFF; font: 700 18px 'Plus Jakarta Sans', sans-serif; color: #14211F; cursor: pointer">+</button>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+    <p style="margin: 4px 2px 0; font-size: 13px; color: #5E6B68; line-height: 1.5">Base prices shown. Promotions are applied when you choose a provider; the technician may propose a final price for you to approve.</p>
+  </div>
+
+  <div style="background: #FFFFFF; border-top: 1px solid #E4E0D6; padding: 14px 20px 22px; display: flex; align-items: center; gap: 14px">
+    <div style="flex-grow: 1">
+      <div style="font-size: 13px; color: #5E6B68">{{summary}}</div>
+      <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums">{{usd}}</span><span style="font-size: 13px; color: #5E6B68; font-variant-numeric: tabular-nums">{{khr}}</span></div>
+    </div>
+    <a href="C3-Details.dc.html" style="height: 52px; padding: 0 24px; border-radius: 14px; background: #0E5E56; color: #FFFFFF; font-weight: 700; font-size: 15px; display: flex; align-items: center">Continue</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = { sel: { a: 2, b: 1 } };
+  }
+  renderVals() {
+    const base = [
+      { id: 'a', name: 'General cleaning (wall unit)', price: 15, unit: 'unit' },
+      { id: 'b', name: 'Gas refill (R32)', price: 25, unit: 'unit' },
+      { id: 'c', name: 'Leak check & repair', price: 20, unit: 'visit' },
+      { id: 'd', name: 'Installation (new unit)', price: 45, unit: 'unit' },
+      { id: 'e', name: 'Uninstall or relocate', price: 30, unit: 'unit' }
+    ];
+    const sel = this.state.sel;
+    const set = (id, q) => { const n = { ...sel }; if (q <= 0) delete n[id]; else n[id] = q; this.setState({ sel: n }); };
+    let total = 0, count = 0;
+    const items = base.map((b) => {
+      const qty = sel[b.id] || 0, on = qty > 0;
+      if (on) { total += b.price * qty; count++; }
+      return {
+        ...b, qty, on,
+        priceLabel: '$' + b.price.toFixed(2) + ' / ' + b.unit,
+        border: on ? '#0E5E56' : '#FFFFFF',
+        boxBorder: on ? '#0E5E56' : '#C9C4B8',
+        boxBg: on ? '#0E5E56' : '#FFFFFF',
+        toggle: () => set(b.id, on ? 0 : 1),
+        inc: () => set(b.id, qty + 1),
+        dec: () => set(b.id, qty - 1)
+      };
+    });
+    const khr = Math.round(total * 4100 / 100) * 100;
+    return {
+      items,
+      summary: count + (count === 1 ? ' service' : ' services') + ' · base estimate',
+      usd: '$' + total.toFixed(2),
+      khr: '≈ ៛' + khr.toLocaleString('en-US')
+    };
+  }
+}
+</script>
+</body>
+</html>
