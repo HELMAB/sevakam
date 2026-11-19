@@ -3,22 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sevakam — Investment Proposal</title>
-<meta name="description" content="Sevakam: a marketplace connecting Cambodian households with trusted technicians and service companies. Investment proposal 2026.">
+<title>Sevakam — Home Services Marketplace in Cambodia | Investment Proposal</title>
+<meta name="description" content="Sevakam connects households in Phnom Penh and across Cambodia with trusted technicians for AC repair, cleaning, plumbing and more. Investment proposal 2026.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Sevakam">
+<link rel="canonical" href="https://sevakam.vercel.app/">
 
 <!-- Social share preview (investors often receive this link in chat apps) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Sevakam — Investment Proposal">
-<meta property="og:description" content="A marketplace connecting Cambodian households with trusted technicians and service companies.">
-<meta property="og:image" content="https://sevakam.vercel.app/assets/banner.png">
 <meta property="og:site_name" content="Sevakam">
 <meta property="og:url" content="https://sevakam.vercel.app/">
-<link rel="canonical" href="https://sevakam.vercel.app/">
+<meta property="og:title" content="Sevakam — Home Services Marketplace in Cambodia">
+<meta property="og:description" content="A marketplace connecting Cambodian households with trusted technicians and service companies — transparent prices, live tracking, cash or ABA PayWay.">
+<meta property="og:image" content="https://sevakam.vercel.app/assets/banner.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="2560">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Sevakam — home services, booked in minutes">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="km_KH">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sevakam — Home Services Marketplace in Cambodia">
+<meta name="twitter:description" content="A marketplace connecting Cambodian households with trusted technicians and service companies.">
+<meta name="twitter:image" content="https://sevakam.vercel.app/assets/banner.png">
+<meta name="twitter:image:alt" content="Sevakam — home services, booked in minutes">
 
 <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Structured data for search engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sevakam.vercel.app/#org",
+      "name": "Sevakam",
+      "url": "https://sevakam.vercel.app/",
+      "logo": "https://sevakam.vercel.app/assets/icons/icon-512.png",
+      "description": "A home-service marketplace connecting Cambodian households with trusted technicians and service companies.",
+      "areaServed": { "@type": "Country", "name": "Cambodia" },
+      "sameAs": ["https://github.com/HELMAB/sevakam"],
+      "knowsAbout": ["Air conditioner repair", "Home cleaning", "Plumbing", "Electrical repair", "Appliance installation", "Painting", "Pest control", "Furniture assembly"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sevakam.vercel.app/#website",
+      "name": "Sevakam",
+      "url": "https://sevakam.vercel.app/",
+      "inLanguage": ["en", "km"],
+      "publisher": { "@id": "https://sevakam.vercel.app/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sevakam.vercel.app/#webpage",
+      "url": "https://sevakam.vercel.app/",
+      "name": "Sevakam — Home Services Marketplace in Cambodia | Investment Proposal",
+      "isPartOf": { "@id": "https://sevakam.vercel.app/#website" },
+      "about": { "@id": "https://sevakam.vercel.app/#org" },
+      "primaryImageOfPage": "https://sevakam.vercel.app/assets/banner.png",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 <meta name="theme-color" content="#0b3b4f">
 
 <!-- Google Sans covers both Latin and Khmer -->
@@ -145,6 +196,8 @@
     <a href="#invest" class="mt-2 block rounded-2xl bg-amber-500 px-4 py-3.5 text-center font-bold text-ink-900" data-i18n="nav.cta">Invest</a>
   </div>
 </header>
+
+<main id="main">
 
 <!-- ============ HERO ============ -->
 <section id="top" class="relative overflow-hidden bg-gradient-to-br from-ink-900 via-ink-800 to-ink-700 pb-24 pt-32 text-white sm:pt-36 lg:pb-32">
@@ -470,6 +523,8 @@
   </div>
 </section>
 
+</main>
+
 <footer class="border-t border-ink-800/10 py-10">
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 text-sm text-slate-500 sm:flex-row sm:px-6 lg:px-8">
     <p data-i18n="foot.1">Sevakam · Investment proposal 2026</p>
@@ -482,8 +537,8 @@
 /* ---------------- content ---------------- */
 const I18N = {
   en: {
-    'meta.title': 'Sevakam — Investment Proposal',
-    'meta.desc': 'Sevakam: a marketplace connecting Cambodian households with trusted technicians and service companies. Investment proposal 2026.',
+    'meta.title': 'Sevakam — Home Services Marketplace in Cambodia | Investment Proposal',
+    'meta.desc': 'Sevakam connects households in Phnom Penh and across Cambodia with trusted technicians for AC repair, cleaning, plumbing and more. Investment proposal 2026.',
     'menu.open': 'Open menu', 'menu.close': 'Close menu',
     'brand': 'Sevakam',
     'nav.problem': 'Problem', 'nav.solution': 'Solution', 'nav.how': 'How it works', 'nav.model': 'Business model', 'nav.roadmap': 'Roadmap', 'nav.cta': 'Invest',
@@ -523,7 +578,7 @@ const I18N = {
     'foot.1': 'Sevakam · Investment proposal 2026', 'foot.2': 'Draft — figures and terms subject to discussion.',
   },
   km: {
-    'meta.title': 'Sevakam — សំណើវិនិយោគ',
+    'meta.title': 'Sevakam — ទីផ្សារសេវាកម្មផ្ទះនៅកម្ពុជា | សំណើវិនិយោគ',
     'meta.desc': 'Sevakam៖ ទីផ្សារឌីជីថលដែលភ្ជាប់គ្រួសារកម្ពុជាជាមួយជាងជំនាញ និងក្រុមហ៊ុនសេវាកម្មដែលទុកចិត្តបាន។ សំណើវិនិយោគ ២០២៦។',
     'menu.open': 'បើកម៉ឺនុយ', 'menu.close': 'បិទម៉ឺនុយ',
     'brand': 'Sevakam',

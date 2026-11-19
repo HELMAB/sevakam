@@ -1,0 +1,13 @@
+{
+  "name": "Sevakam",
+  "short_name": "Sevakam",
+  "description": "Home services marketplace for Cambodia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f9fa",
+  "theme_color": "#0b3b4f",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
