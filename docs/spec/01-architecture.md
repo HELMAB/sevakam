@@ -38,7 +38,7 @@
 ## 1.3 Repository layout
 
 ```
-home-service-system/
+sevakam/
 ├── api/                    Laravel API
 │   ├── app/
 │   │   ├── Enums/          JobStatus, AssignmentStatus, UserRole, TechnicianType, …

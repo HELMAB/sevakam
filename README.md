@@ -8,7 +8,7 @@
 
 > **Status:** Proposal & design complete, implementation starting (milestone M0). See [Documentation](#documentation).
 >
-> **Website:** [sevakam.vercel.app](https://sevakam.vercel.app) · **Repository:** [github.com/HELMAB/home-service-system](https://github.com/HELMAB/home-service-system) · **Landing page source:** [`docs/index.html`](docs/index.html)
+> **Website:** [sevakam.vercel.app](https://sevakam.vercel.app) · **Repository:** [github.com/HELMAB/sevakam](https://github.com/HELMAB/sevakam) · **Landing page source:** [`docs/index.html`](docs/index.html)
 
 ---
 
