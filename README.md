@@ -7,6 +7,8 @@
 A mobile marketplace that connects people who need home services — repairs, cleaning, installation, maintenance — with trusted independent technicians and service companies, operated through a web admin dashboard.
 
 > **Status:** Proposal & design complete, implementation starting (milestone M0). See [Documentation](#documentation).
+>
+> **Repository:** [github.com/HELMAB/home-service-system](https://github.com/HELMAB/home-service-system) · **Landing page:** [`docs/index.html`](docs/index.html)
 
 ---
 
