@@ -1,4 +1,4 @@
-# Tasks — Home Service System
+# Tasks — Sevakam
 
 Status: **Draft v0.1** (2026-11-19) · Derived from [`docs/spec`](../spec/README.md) · Planned for a **solo developer** (one sequential path, no estimates).
 

@@ -1,4 +1,4 @@
-# Technical Specification — Home Service System
+# Technical Specification — Sevakam
 
 Status: **Draft v0.1** (2026-11-19)
 Derived from: [`docs/pr`](../pr/README.md) (project requirements) and `Home Service Mobile.xlsx` (original task list and estimates, kept in this folder).

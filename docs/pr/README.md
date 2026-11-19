@@ -1,4 +1,4 @@
-# Project Requirements — Home Service System
+# Project Requirements — Sevakam
 
 Status: **Draft v0.1** (2026-11-19)
 Source: `docs/spec/Home Service Mobile.xlsx` + clarification session with the product owner.

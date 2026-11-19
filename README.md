@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="docs/assets/banner.png" alt="Home Service System — ប្រព័ន្ធសេវាកម្មតាមផ្ទះ: book trusted technicians, track them live, pay and rate" width="100%">
+  <img src="docs/assets/banner.png" alt="Sevakam — ប្រព័ន្ធសេវាកម្មតាមផ្ទះ: book trusted technicians, track them live, pay and rate" width="100%">
 </p>
 
-# Home Service System
+# Sevakam
 
-A mobile marketplace that connects people who need home services — repairs, cleaning, installation, maintenance — with trusted independent technicians and service companies, operated through a web admin dashboard.
+**Sevakam** (សេវាកម្ម, "service") is a mobile marketplace that connects people who need home services — repairs, cleaning, installation, maintenance — with trusted independent technicians and service companies, operated through a web admin dashboard.
 
 > **Status:** Proposal & design complete, implementation starting (milestone M0). See [Documentation](#documentation).
 >
-> **Repository:** [github.com/HELMAB/home-service-system](https://github.com/HELMAB/home-service-system) · **Landing page:** [`docs/index.html`](docs/index.html)
+> **Website:** [sevakam.vercel.app](https://sevakam.vercel.app) · **Repository:** [github.com/HELMAB/home-service-system](https://github.com/HELMAB/home-service-system) · **Landing page source:** [`docs/index.html`](docs/index.html)
 
 ---
 

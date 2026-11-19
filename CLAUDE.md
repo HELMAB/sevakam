@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A monorepo for a home-service marketplace: customers book services, technicians (freelancers or company employees) do the work, and an admin operates the platform. Four independent projects:
+A monorepo for **Sevakam** (https://sevakam.vercel.app), a home-service marketplace for Cambodia: customers book services, technicians (freelancers or company employees) do the work, and an admin operates the platform. Four independent projects:
 
 | Directory | Project | Stack |
 | --------- | ------- | ----- |
